@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# <xbar.title>PNZ RAM Monitor</xbar.title>
+# <xbar.title>RAM Monitor</xbar.title>
 # <xbar.version>v1.0</xbar.version>
 # <xbar.author>Kapil Thakare</xbar.author>
 # <xbar.author.github>kapilthakare-cyberpunk</xbar.author.github>
@@ -10,7 +10,7 @@
 # <swiftbar.hideRunInTerminal>true</swiftbar.hideRunInTerminal>
 # <swiftbar.hideLastUpdated>false</swiftbar.hideLastUpdated>
 """
-PNZ RAM Monitor — SwiftBar plugin
+RAM Monitor - SwiftBar plugin
 Reports live RAM usage in the macOS menu bar and lists the top memory consumers.
 
 SwiftBar derives the refresh interval from the filename: `ram.5s.py` -> every 5s.
@@ -127,7 +127,7 @@ def main() -> None:
         print(f"-- {_clean(label)} | {_kill_action(pid, name)}")
 
     print("--")
-    print("-- ↻ Refresh | refresh=true")
+    print("-- Refresh | refresh=true")
 
 
 if __name__ == "__main__":

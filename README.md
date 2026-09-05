@@ -1,4 +1,4 @@
-# 🖥️ PNZ RAM Monitor for macOS
+# RAM Monitor for macOS
 
 [![OS](https://img.shields.io/badge/macOS-Tahoe%2026%2B-blue?style=flat-square&logo=apple)](https://www.apple.com/macos)
 [![SwiftBar](https://img.shields.io/badge/SwiftBar-Compatible-orange?style=flat-square)](https://github.com/swiftbar/SwiftBar)
@@ -7,12 +7,12 @@
 A lightweight macOS menu bar utility that displays live RAM usage at a glance and lists memory-intensive processes. Designed specifically to support macOS 26+ (Tahoe) via **SwiftBar**.
 
 ```text
-68%   ← Appears in your menu bar, updating dynamically every 5 seconds
+68%   -- appears in your menu bar, updating dynamically every 5 seconds
 ```
 
 ---
 
-## ✨ Features
+## Features
 
 - **Live Status bar:** Displays real-time RAM usage percentage, updating every 5 seconds.
 - **Process List:** Lists the top memory-consuming processes inside a dropdown.
@@ -21,7 +21,7 @@ A lightweight macOS menu bar utility that displays live RAM usage at a glance an
 
 ---
 
-## 🛠️ Requirements
+## Requirements
 
 - **Operating System:** macOS 10.15 Catalina or later (Fully supports macOS 26 Tahoe)
 - **SwiftBar:** Installed via Homebrew cask: `brew install --cask swiftbar`
@@ -29,7 +29,7 @@ A lightweight macOS menu bar utility that displays live RAM usage at a glance an
 
 ---
 
-## 📥 Installation
+## Installation
 
 ### 1. Clone the Repository
 ```bash
@@ -43,7 +43,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-> [!NOTE]  
+> [!NOTE]
 > The installer automates the following actions:
 > - Cleans up legacy LaunchAgent `.plist` and Application bundle configurations.
 > - Verifies and installs SwiftBar via Homebrew Cask if missing.
@@ -52,7 +52,7 @@ chmod +x install.sh
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### 1. Launch SwiftBar
 Start SwiftBar from your Applications folder, or execute:
@@ -72,7 +72,7 @@ ln -s "$(pwd)/plugins/ram.5s.py" "/YOUR/EXISTING/PLUGINS/DIR/ram.5s.py"
 ```
 
 ### 3. Customize Settings
-To adjust the process list and update speed, edit the configuration constants at the top of [plugins/ram.5s.py](file:///Users/kapilthakare/Projects/ram-menubar/plugins/ram.5s.py):
+To adjust the process list and update speed, edit the configuration constants at the top of `plugins/ram.5s.py`:
 
 ```python
 # Configuration
@@ -90,7 +90,7 @@ IGNORE_NAMES = {
 
 ---
 
-## 🗑️ Uninstallation
+## Uninstallation
 
 To clean up configurations and legacy files:
 ```bash
@@ -104,13 +104,13 @@ brew uninstall --cask swiftbar
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 ram-menubar/
-├── plugins/
-│   └── ram.5s.py        # SwiftBar plugin script (uses psutil from .venv)
-├── install.sh           # One-shot shell installer
-├── uninstall.sh         # Teardown script for legacy configurations
-└── README.md            # This documentation
++-- plugins/
+|   +-- ram.5s.py        # SwiftBar plugin script (uses psutil from .venv)
++-- install.sh           # One-shot shell installer
++-- uninstall.sh         # Teardown script for legacy configurations
++-- README.md            # This documentation
 ```
