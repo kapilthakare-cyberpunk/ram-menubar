@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+# <xbar.title>PNZ RAM Monitor</xbar.title>
+# <xbar.version>v1.0</xbar.version>
+# <xbar.author>Kapil Thakare</xbar.author>
+# <xbar.author.github>kapilthakare-cyberpunk</xbar.author.github>
+# <xbar.desc>Live RAM usage percentage in the menu bar with top process list and click-to-kill.</xbar.desc>
+# <xbar.dependencies>python3, psutil</xbar.dependencies>
+# <xbar.abouturl>https://github.com/kapilthakare-cyberpunk/ram-menubar</xbar.abouturl>
+# <swiftbar.runInBash>false</swiftbar.runInBash>
+# <swiftbar.hideRunInTerminal>true</swiftbar.hideRunInTerminal>
+# <swiftbar.hideLastUpdated>false</swiftbar.hideLastUpdated>
 """
 PNZ RAM Monitor — SwiftBar plugin
 Reports live RAM usage in the macOS menu bar and lists the top memory consumers.

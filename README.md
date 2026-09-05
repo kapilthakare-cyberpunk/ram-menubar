@@ -7,17 +7,17 @@
 A lightweight macOS menu bar utility that displays live RAM usage at a glance and lists memory-intensive processes. Designed specifically to support macOS 26+ (Tahoe) via **SwiftBar**.
 
 ```text
-RAM 68%   ← Appears in your menu bar, updating dynamically every 5 seconds
+68%   ← Appears in your menu bar, updating dynamically every 5 seconds
 ```
 
 ---
 
 ## ✨ Features
 
-- **Live Status bar:** Displays real-time RAM usage percentage.
-- **Process List:** Lists the top 5 memory-consuming processes inside a dropdown.
-- **Interactive Termination:** Click-to-kill option on any process to terminate memory-hogging tasks instantly.
-- **Visual Warnings:** Changes status color based on configurable thresholds (yellow for warning, red for critical).
+- **Live Status bar:** Displays real-time RAM usage percentage, updating every 5 seconds.
+- **Process List:** Lists the top memory-consuming processes inside a dropdown.
+- **Interactive Termination:** Click-to-kill option on any process to terminate memory-hogging tasks instantly (with confirmation dialog).
+- **Swap Usage:** Displays swap memory usage alongside RAM in the dropdown.
 
 ---
 
@@ -33,8 +33,8 @@ RAM 68%   ← Appears in your menu bar, updating dynamically every 5 seconds
 
 ### 1. Clone the Repository
 ```bash
-git clone git@github.com:kapilthakare-cyberpunk/ram-menubar-watcher.git
-cd ram-menubar-watcher
+git clone git@github.com:kapilthakare-cyberpunk/ram-menubar.git
+cd ram-menubar
 ```
 
 ### 2. Run the Installer
@@ -71,14 +71,18 @@ Alternatively, if you already have a configured SwiftBar plugin directory, you c
 ln -s "$(pwd)/plugins/ram.5s.py" "/YOUR/EXISTING/PLUGINS/DIR/ram.5s.py"
 ```
 
-### 3. Customize Thresholds
-To adjust warnings and update speed, edit the configuration constants at the top of [plugins/ram.5s.py](file:///Users/kapilthakare/Projects/ram-menubar/plugins/ram.5s.py):
+### 3. Customize Settings
+To adjust the process list and update speed, edit the configuration constants at the top of [plugins/ram.5s.py](file:///Users/kapilthakare/Projects/ram-menubar/plugins/ram.5s.py):
 
 ```python
 # Configuration
-WARN_THRESHOLD = 60   # % -> yellow warning in menu bar
-CRIT_THRESHOLD = 80   # % -> red warning in menu bar
-TOP_N          = 5    # number of processes shown
+TOP_N = 5    # number of processes shown in the dropdown
+
+# System processes to exclude from the process list and kill list
+IGNORE_NAMES = {
+    "kernel_task", "WindowServer", "launchd", "loginwindow",
+    "Dock", "Finder", "SystemUIServer", "mediaremoted", "callservicesd",
+}
 ```
 
 > [!TIP]
